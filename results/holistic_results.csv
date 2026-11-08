@@ -1,0 +1,4 @@
+model,verif_upright,verif_inverted,inversion_effect,thatcher_d_up,thatcher_d_inv,thatcher_index,comp_aligned,comp_misaligned,composite_effect,comp_aligned_inv,comp_misaligned_inv,composite_effect_inv,scramble2_auc,scramble2_retained,scramble4_auc,scramble4_retained,scramble8_auc,scramble8_retained
+baseline,0.85,0.638,0.212,0.228,0.147,0.216,0.933,0.991,0.058,0.98,0.99,0.01,0.676,0.502,0.578,0.223,0.527,0.077
+augmented,0.895,0.894,0.001,0.215,0.215,0.001,0.989,0.998,0.009,0.987,0.999,0.012,0.729,0.58,0.606,0.268,0.543,0.108
+equivariant,0.903,0.903,0.0,0.199,0.199,-0.0,0.973,0.998,0.025,0.973,0.998,0.025,0.727,0.563,0.575,0.186,0.536,0.089
