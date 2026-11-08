@@ -1,0 +1,16 @@
+# colab (python 3.13, torch 2.11) already has torch, torchvision, numpy, pandas,
+# scipy, scikit-learn, statsmodels, opencv and matplotlib
+torch
+torchvision
+numpy
+pandas
+scipy
+scikit-learn
+statsmodels
+opencv-python
+matplotlib
+tqdm
+git+https://github.com/AMLab-Amsterdam/lie_learn
+escnn
+# install with --no-deps, it pins an old torch
+# facenet-pytorch
