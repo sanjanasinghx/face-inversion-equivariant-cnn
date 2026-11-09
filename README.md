@@ -75,8 +75,8 @@ On Colab's Python 3.13, `lie_learn` has to be installed from GitHub before `escn
 ## Notes
 
 - Verification pairs come from the VGGFace2 test set, not LFW.
-- The comparison with human similarity judgements and the log-polar model (both stretch goals) were not done.
-- We added scrambled faces and a Navon global/local test (`results/holistic_results.csv`, `results/gai_by_layer.csv`).
+- We did not compare against human similarity judgements or try a log-polar model.
+- There is also a scrambled-face test and a Navon global/local test (`results/holistic_results.csv`, `results/gai_by_layer.csv`).
 
 ## References
 
