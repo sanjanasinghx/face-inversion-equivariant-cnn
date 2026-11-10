@@ -17,7 +17,7 @@ Each model was trained twice (seeds 0 and 1).
 
 ## Data
 
-VGGFace2, from the Hugging Face mirror `ProgramComputer/VGGFace2` (you need to accept the dataset terms there). We used the 500 training identities with at least 300 images (206,454 images) and the full test set (500 different identities, 169,396 images). Faces were aligned to 112x112 with MTCNN landmarks and the ArcFace 5-point template. A circular mask is applied to every image for every model, so the black corners left by rotation can't give away the orientation.
+VGGFace2, from the Hugging Face mirror `ProgramComputer/VGGFace2` (accept the dataset terms there). We used the 500 training identities with at least 300 images (206,454 images) and the full test set (500 different identities, 169,396 images). Faces were aligned to 112x112 with MTCNN landmarks and the ArcFace 5-point template. A circular mask is applied to every image for every model, so the black corners left by rotation can't give away the orientation.
 
 The images are not included here. `results/split.json` lists the identities and the validation files.
 
