@@ -68,6 +68,8 @@ Both notebooks were run on Google Colab with a T4 GPU and save everything to `My
 
 To skip training, run the setup, download and alignment parts of notebook 01, put the release checkpoints in `MyDrive/face_inversion/ckpt/` and `results/split.json` in `MyDrive/face_inversion/`, then run notebook 02 up to the second seed section. The release files have no optimizer state, so they can't be used to resume training.
 
+To also get `holistic_results.csv`, `gai_by_layer.csv` and figures 1 to 3 from the release checkpoints, run the training section of notebook 01 except the three cells that call `train(...)`, then all of its face tests section. The training cells would try to resume from the release files and fail.
+
 The scrambled-face test shuffles tiles with a generator seeded on the CUDA device, so on other hardware the shuffles (and those numbers) come out a little different. Everything else gives the same numbers up to float16 rounding.
 
 On Colab's Python 3.13, `lie_learn` has to be installed from GitHub before `escnn`, and `facenet-pytorch` with `--no-deps` so it doesn't replace torch. The install cells do this.
