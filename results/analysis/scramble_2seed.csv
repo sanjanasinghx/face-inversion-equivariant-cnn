@@ -1,0 +1,7 @@
+model,seed,auc_up,scr2_kept,scr4_kept,scr8_kept
+baseline,0,0.8499,0.502,0.223,0.077
+baseline,1,0.8396,0.515,0.229,0.09
+augmented,0,0.8951,0.58,0.268,0.108
+augmented,1,0.8943,0.595,0.273,0.103
+equivariant,0,0.9025,0.563,0.186,0.089
+equivariant,1,0.8971,0.529,0.189,0.065
