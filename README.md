@@ -34,6 +34,7 @@ Face verification on the 500 test identities (3000 same and 3000 different pairs
 | inversion index, (up - inv) / up | 0.244 [0.229, 0.257] | -0.001 [-0.005, 0.002] | 0 (exact, by design) |
 | Thatcher index | 0.207 [0.198, 0.216] | -0.001 [-0.004, 0.003] | 0 (exact, by design) |
 | composite effect | 0.070 [0.063, 0.076] | 0.010 [0.008, 0.012] | 0.024 [0.021, 0.028] |
+| scrambled 2x2, share of upright AUC kept (seed 0 / 1) | 0.51 (0.502 / 0.515) | 0.59 (0.580 / 0.595) | 0.55 (0.563 / 0.529) |
 
 ![tuning curves](figures/4_tuning_curves.png)
 
@@ -52,6 +53,7 @@ Model x orientation repeated measures ANOVA on verification AUC: interaction F(8
 ```
 notebooks/01_data_and_training.ipynb   download, alignment, training (seed 0), first face tests, navon
 notebooks/02_analysis.ipynb            tuning curves, layer-wise analyses, statistics, seed 1 training
+notebooks/03_scramble_two_seeds.ipynb  scrambled-face test on both seeds
 results/                               all numbers behind the figures (csv)
 figures/                               plots saved by the notebooks
 ```
@@ -60,13 +62,22 @@ Trained weights for all 6 runs are on the [releases page](https://github.com/san
 
 ## Running it
 
-Both notebooks were run on Google Colab with a T4 GPU and save everything to `MyDrive/face_inversion`.
+All three notebooks were run on Google Colab with a T4 GPU and save everything to `MyDrive/face_inversion`.
 
 1. Accept the VGGFace2 terms on Hugging Face and add your token as a Colab secret called `HF_Token`.
 2. Run `01_data_and_training.ipynb`. Downloading and aligning the faces takes a few hours. Training takes about 20 min (baseline), 35 min (augmented) and 80 min (equivariant).
-3. Run `02_analysis.ipynb`.
+3. Run `02_analysis.ipynb` up to the second seed section (tuning curves, layer-wise, statistics), then the second seed section (about 2.2 h), then rerun the cells before it so the statistics average both seeds. Results go to `MyDrive/face_inversion/analysis/`.
+4. Run `03_scramble_two_seeds.ipynb` (about 5 min). It writes `analysis/scramble_2seed.csv`.
 
-To skip training, run the setup, download and alignment parts of notebook 01, put the release checkpoints in `MyDrive/face_inversion/ckpt/` and `results/split.json` in `MyDrive/face_inversion/`, then run notebook 02 up to the second seed section. The release files have no optimizer state, so they can't be used to resume training.
+Which notebook gives which result:
+
+| result | notebook | file |
+|---|---|---|
+| validation accuracy, figures 1 to 3, seed 0 holistic tests, Navon | 01 | `holistic_results.csv`, `gai_by_layer.csv` |
+| tuning curves, inversion/Thatcher/composite with CIs, layer-wise, ANOVA, contrasts | 02 | `results/analysis/*.csv`, figures 4 and 5 |
+| scrambled faces, both seeds | 03 | `results/analysis/scramble_2seed.csv` |
+
+To skip training, run the setup, download and alignment parts of notebook 01, put the release checkpoints in `MyDrive/face_inversion/ckpt/` and `results/split.json` in `MyDrive/face_inversion/`, then run notebook 02 up to the second seed section and notebook 03. The release files have no optimizer state, so they can't be used to resume training.
 
 To also get `holistic_results.csv`, `gai_by_layer.csv` and figures 1 to 3 from the release checkpoints, run the training section of notebook 01 except the three cells that call `train(...)`, then all of its face tests section. The training cells would try to resume from the release files and fail.
 
@@ -78,7 +89,7 @@ On Colab's Python 3.13, `lie_learn` has to be installed from GitHub before `escn
 
 - Verification pairs come from the VGGFace2 test set, not LFW.
 - We did not compare against human similarity judgements or try a log-polar model.
-- There is also a scrambled-face test and a Navon global/local test (`results/holistic_results.csv`, `results/gai_by_layer.csv`).
+- There is also a Navon global/local test (`results/gai_by_layer.csv`). The scrambled-face numbers in `results/holistic_results.csv` are seed 0 only; `results/analysis/scramble_2seed.csv` has both seeds.
 
 ## References
 
