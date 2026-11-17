@@ -96,9 +96,14 @@ On Colab's Python 3.13, `lie_learn` has to be installed from GitHub before `escn
 
 ## References
 
-- Dobs, Yuan, Martinez and Kanwisher (2023). Behavioral signatures of face perception emerge in deep neural networks optimized for face recognition. PNAS.
-- Jacob, Pramod, Katti and Arun (2021). Qualitative similarities and differences in visual object representations between brains and deep networks. Nature Communications.
-- Cohen and Welling (2016). Group equivariant convolutional networks. ICML.
-- Gahl, Kulkarni, Pathak, Russell and Cottrell (2024). Visual expertise explains image inversion effects. UniReps workshop.
-- Cao, Shen, Xie, Parkhi and Zisserman (2018). VGGFace2: a dataset for recognising faces across pose and age. FG.
-- Yin (1969). Looking at upside-down faces. Journal of Experimental Psychology.
+Cao, Shen, Xie, Parkhi and Zisserman (2018). VGGFace2: a dataset for recognising faces across pose and age. FG.
+
+Cohen and Welling (2016). Group equivariant convolutional networks. ICML.
+
+Dobs, Yuan, Martinez and Kanwisher (2023). Behavioral signatures of face perception emerge in deep neural networks optimized for face recognition. PNAS.
+
+Gahl, Kulkarni, Pathak, Russell and Cottrell (2024). Visual expertise explains image inversion effects. UniReps workshop.
+
+Jacob, Pramod, Katti and Arun (2021). Qualitative similarities and differences in visual object representations between brains and deep networks. Nature Communications.
+
+Yin (1969). Looking at upside-down faces. Journal of Experimental Psychology.
