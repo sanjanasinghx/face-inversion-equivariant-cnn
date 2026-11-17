@@ -54,11 +54,14 @@ Model x orientation repeated measures ANOVA on verification AUC: interaction F(8
 notebooks/01_data_and_training.ipynb   download, alignment, training (seed 0), first face tests, navon
 notebooks/02_analysis.ipynb            tuning curves, layer-wise analyses, statistics, seed 1 training
 notebooks/03_scramble_two_seeds.ipynb  scrambled-face test on both seeds
+scratch colab t4 gpu files/           raw colab notebooks as run on the t4, with all outputs
 results/                               all numbers behind the figures (csv)
 figures/                               plots saved by the notebooks
 ```
 
 Trained weights for all 6 runs are on the [releases page](https://github.com/sanjanasinghx/face-inversion-equivariant-cnn/releases/tag/v1.0). Each file has the model `state_dict`, the training history and the list of identities.
+
+The raw Colab notebooks, exactly as they were run on the T4 with all their outputs, are in `scratch colab t4 gpu files/` (`vggface2.ipynb` = 01, `face_inversion_analysis.ipynb` = 02, `scramble_2seed.ipynb` = 03). The files in `notebooks/` are cleaned copies of the same code.
 
 ## Running it
 
