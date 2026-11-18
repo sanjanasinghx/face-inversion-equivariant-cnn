@@ -1,7 +1,7 @@
 # Does orientation invariance cost holistic face processing?
 
 Bhavya Gajjar & Sanjana Singh,
-NeuroAI course project, IIT Gandhinagar. 
+NeuroAI course project, IIT Gandhinagar. Taught by Prof. Vaibhav Tripathi
 
 Face-trained CNNs, like people, are much worse at recognising upside-down faces, and they show the composite and Thatcher effects that are taken as signs of holistic processing. We made networks orientation invariant in two different ways and checked whether these effects survive.
 
